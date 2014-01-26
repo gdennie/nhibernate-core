@@ -15,10 +15,10 @@ namespace NHibernate
 	/// <remarks>
 	/// <para>
 	/// The lifecycle of a <c>ISession</c> is bounded by the beginning and end of a logical
-	/// transaction. (Long transactions might span several database transactions.)
+	/// transaction. (Logical transactions might span several database transactions.)
 	/// </para>
 	/// <para>
-	/// The main function of the <c>ISession</c> is to offer create, find and delete operations
+	/// The main function of the <c>ISession</c> is to offer create, find, and delete operations
 	/// for instances of mapped entity classes. Instances may exist in one of two states:
 	/// <list type="bullet">
 	/// <item>transient: not associated with any <c>ISession</c></item>
@@ -38,8 +38,9 @@ namespace NHibernate
 	/// <c>UPDATE</c>.
 	/// </para>
 	/// <para>
-	/// It is not intended that implementors be threadsafe. Instead each thread/transaction should obtain
-	/// its own instance from an <c>ISessionFactory</c>.
+	/// It is not intended that implementions of <c>ISession</c> be threadsafe. Instead each 
+	/// thread/transaction should obtain
+	/// their own instance from an <c>ISessionFactory</c>.
 	/// </para>
 	/// <para>
 	/// A <c>ISession</c> instance is serializable if its persistent classes are serializable
